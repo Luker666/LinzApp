@@ -1,0 +1,9 @@
+TBD:  
+Kategorie{
+Von Bis Filter 
+Kategorie Filter 
+Veranstalter Filter
+}
+Kommentarfunktion 
+Sortierfunktion
+Eventdetails: Expand text 
