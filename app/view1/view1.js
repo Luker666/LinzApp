@@ -11,10 +11,6 @@ angular.module('myApp.view1', ['ngRoute'])
   when('/view1/:eventId', {
     templateUrl: 'view1/eventDetails.html',
     controller: 'EventDetailsCtrl'
-  }).
-  when('/view2', {
-    templateUrl: 'view1/eventDetails.html',
-    controller: 'View2Ctrl'
   })
 }])
 
@@ -22,8 +18,5 @@ angular.module('myApp.view1', ['ngRoute'])
 
 }]).
 controller('EventDetailsCtrl', ['$scope', function($scope) {
-
-}]).
-controller('View2Ctrl', ['$scope', function($scope) {
 
 }]);

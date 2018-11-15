@@ -49,3 +49,31 @@
   height: 200px;
   width: 200px;
 }
+
+
+.btn-xl {
+    padding: 10px 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    width:70%;
+}
+
+.like-event {
+  background: url('/img/heart.png') #ffffff;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 15px 12px;
+  color: #000;
+}
+
+.export-to-calendar {
+  background: url('/img/calendar.png') #ffffff;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding: 15px 12px;
+  color: #000;
+}
+.checked {
+    color: #428bca;
+}
+
