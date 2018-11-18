@@ -12,11 +12,15 @@
         <!-- Custom styles for this template -->
     <link rel="stylesheet" href="app.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="jquery.asmselect.css">
+
+
+
   </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark" >
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -29,7 +33,7 @@
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Meine Events</a>
+            <a class="nav-link" href="#!/myEvents">Meine Events</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Info</a>
@@ -42,11 +46,101 @@
         </ul>
       </div>
     </nav>
-
+    <div class="container">
+      <button type="button" class="btn btn-block dropdown-toggle" data-toggle="collapse" data-target="#demo">Veranstaltungen Filtern</button>
+      <div id="demo" class="collapse">
+        <!-- content collapse-->
+        <!-- Datepicker Von-->
+        <div class="bootstrap-iso">
+         <div class="container-fluid">
+          <div class="row">
+           <div class="col-md-6 col-sm-6 col-xs-12">
+            <form action="https://formden.com/post/MlKtmY4x/" class="form-horizontal" method="post">
+             <div class="form-group ">
+              <label class="control-label col-sm-2" for="date">
+               Von
+               <span class="asteriskField">
+                *
+               </span>
+              </label>
+              <div class="col-sm-10">
+               <div class="input-group">
+                <div class="input-group-addon">
+                 <i class="fa fa-calendar">
+                 </i>
+                </div>
+                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+               </div>
+              </div>
+             </div>
+            </form>
+           </div>
+          </div>
+          <div class="row">
+           <div class="col-md-6 col-sm-6 col-xs-12">
+            <form action="https://formden.com/post/MlKtmY4x/" class="form-horizontal" method="post">
+             <div class="form-group ">
+              <label class="control-label col-sm-2" for="date">
+               Bis
+               <span class="asteriskField">
+                *
+               </span>
+              </label>
+              <div class="col-sm-10">
+               <div class="input-group">
+                <div class="input-group-addon">
+                 <i class="fa fa-calendar">
+                 </i>
+                </div>
+                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+               </div>
+              </div>
+             </div>
+              <form action="./example_results.php" method="post">
+                  <label for="cities">Kategorie</label>
+                  <select id="cities" multiple="multiple" name="cities[]" title="Kategorie auswählen">
+                  <option>Sport</option>
+                  <option>Freizeit/Unterhaltung</option>
+                  <option>Bühne/Musik/Literatur</option>
+                  <option>---Musik</option>
+                  <option>---Theater/Kabarett</option>
+                  <option>---Literatur</option>
+                  <option>---Tanz/Show</option>
+                  <option>Festivals</option>
+                  <option>Ausstellungen</option>
+                  </select>
+                </form>
+              <br>
+              <label>Sortieren nach: </label>
+              <select>
+                <option value="Datum">Datum</option>
+                <option value="Veranstalter">Veranstalter</option>
+                <option value="Bewertung">Bewertung</option>
+              </select>
+              <br>
+              <br>
+             <div class="form-group">
+              <div class="col-sm-10 col-sm-offset-2">
+               <input name="_honey" style="display:none" type="text"/>
+               <button class="btn btn-primary " data-toggle="collapse" data-target="#demo" name="submit">
+                Filtern
+               </button>
+              </div>
+             </div>
+            </form>
+           </div>
+          </div>
+         </div>
+        </div>
+        <!-- content end-->
+      </div>
+    </div>
+    <br> 
     <main role="main" class="container">
 
       <div ng-view></div>
 
+ 
     </main><!-- /.container -->
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -58,7 +152,31 @@
     <script src="view1/view1.js"></script>
     <script src="view2/view2.js"></script>
     <script src="login/login.js"></script>
-    <script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="myEvents/myEvents.js"></script>
+
+    <!--formden.js communicates with FormDen server to validate fields and submit via AJAX -->
+    <script type="text/javascript" src="https://formden.com/static/cdn/formden.js"></script>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery.ui.js"></script>
+    <script type="text/javascript" src="js/jquery.asmselect.js"></script>
+
+      <script type="text/javascript">
+
+          $(document).ready(function() {
+
+            $("#cities").asmSelect({
+              addItemTarget: 'bottom',
+              animate: true,
+              highlight: true,
+              sortable: true
+
+            }).after($("<a href='#'>Select All</a>").click(function() {
+              $("#cities").children().attr("selected", "selected").end().change();
+              return false;
+            })); 
+          }); 
+
+        </script>
     </body>
 </html>

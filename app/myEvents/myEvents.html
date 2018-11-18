@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="#/bower_components/bootstrap/site/favicon.ico">
+
+    <title>myEvents</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="#/bower_components/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="#/bower_components/assets/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+<div class="row">Alle Exportieren
+<button class="btn btn-lg export-to-calendar" data-toggle="modal" data-target="#exportModal"></button>
+</div>
+<br>
+<div class="row templateEvent">
+	<div class="cold-md-4">
+		<h3 class="eventHeadline">Ahoi Pop Festival 2018!<h3>
+
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<br>
+		<h4>01.11. - 03.01.2018 // 20:00 <h4>
+		<h5>Musik<H5>
+		<p class="eventLocation">Posthof Linz</p>
+		<a class="btn btn-primary btn-lg btn-xl" href="#!/view1/15">Details</a>
+	</div>
+</div>
+
+<div class="row templateEvent">
+	<div class="cold-md-4">
+		<h3 class="eventHeadline">Linz Marathon<h3>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star"></span>
+		<br>
+		<h4>08.04.2019 // 07:00 <h4>
+		<h5>Sport<H5>
+		<p class="eventLocation">Hauptplatz</p>
+		<a class="btn btn-primary btn-lg btn-xl" href="#!/view1/15">Details</a>
+	</div>
+</div>
+
+<div class="row templateEvent">
+	<div class="cold-md-4">
+		<h3 class="eventHeadline">Donau in Flammen<h3>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star checked"></span>
+		<span class="fa fa-star"></span>
+		<span class="fa fa-star"></span>
+		<br>
+		<h4>15.06.2019 // 18:00 <h4>
+		<h5>Show<H5>
+		<p class="eventLocation">Donaulände</p>
+		<a class="btn btn-primary btn-lg btn-xl" href="#!/view1/15">Details</a>
+	</div>
+</div>
+
+	<!-- Export Modal -->
+	  <div class="modal fade" id="exportModal" role="dialog">
+	    <div class="modal-dialog">
+	    
+	      <!-- Modal content-->
+	      <div class="modal-content">
+	        <div class="modal-header">
+	           <h4 class="modal-title">In Kalender exportiert</h4>
+	        </div>
+
+	        <div class="modal-footer">
+	          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="#/assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>
